@@ -21,5 +21,5 @@ def conjugateRUStem(verb_base): # This is a useless endeavore for RU verbs.
 def conjugateUStem(user_verb):
     global chars_df
     new_verb = user_verb[:-1]
-    new_end_char = chars_df.loc[chars_df['U'] == "う", 'A'].iloc[0]
+    new_end_char = chars_df.loc[chars_df['U'] == "う", 'I'].iloc[0]
     return new_verb + new_end_char
