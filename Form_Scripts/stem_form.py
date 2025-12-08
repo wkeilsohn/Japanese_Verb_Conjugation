@@ -15,7 +15,7 @@ chars_df = pd.read_csv(char_file)
 
 # Define Functions
 
-def conjugateRUStem(verb_base): # This is a useless endevore for RU verbs.
+def conjugateRUStem(verb_base): # This is a useless endeavore for RU verbs.
     return verb_base 
 
 def conjugateUStem(user_verb):
