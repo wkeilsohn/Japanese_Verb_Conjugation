@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 cpath = os.getcwd() 
-files_location = os.path.join(cpath, "Charts")
+files_location = os.path.join(cpath, "Form_Scripts\Charts")
 char_file = os.path.join(files_location, "chars.csv")
 chars_df = pd.read_csv(char_file)
 
@@ -21,7 +21,7 @@ def conjugateRUNegative(verb_base):
 
 def conjugateRUPastNegative(negative_ru):
     global past_ending
-    return negative_ru + past_ending
+    return negative_ru[:-1] + past_ending
 
 def conjugateUNegative(user_verb):
     global chars_df

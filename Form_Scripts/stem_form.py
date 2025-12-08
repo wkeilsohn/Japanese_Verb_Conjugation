@@ -9,7 +9,7 @@ import pandas as pd
 # Declare Variables
 
 cpath = os.getcwd() 
-files_location = os.path.join(cpath, "Charts")
+files_location = os.path.join(cpath, "Form_Scripts\Charts")
 char_file = os.path.join(files_location, "chars.csv")
 chars_df = pd.read_csv(char_file)
 

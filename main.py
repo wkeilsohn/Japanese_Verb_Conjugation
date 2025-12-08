@@ -16,13 +16,6 @@ exception_ls = ["ある", "いく"]
 
 ru_u_common_exceptions = ["かえる", "しる", "しゃべる", "帰る", "知る", "喋る"] # There are probably more but I am just one person.
 
-
-### Might need to move this again...
-# cpath = os.getcwd() 
-# files_location = os.path.join(cpath, "Charts")
-# char_file = os.path.join(files_location, "chars.csv")
-# chars_df = pd.read_csv(char_file)
-
 # Define Functions
 
 def takeVerb():

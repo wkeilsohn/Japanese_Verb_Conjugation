@@ -9,24 +9,25 @@ polite_add_on = "い"
 
 # Define Functions
 
-def conjugateTEForm(verb_base, verb_type): # This only makes the regular te_form. Not one of the polite derivatives. 
+def conjugateRUTEForm(verb_base): # This only makes the regular te_form. Not one of the polite derivatives. 
+    te_verb = ""
+    te_verb = te_verb + verb_base + "て"
+    return te_verb
+
+def conjugateUTEForm(user_verb, verb_type):
     global te_irregulars
-    # global te_r_regulars # Not Necessary 
     global te_u_regulars
     te_verb = ""
-    end_char = "" # Just allocating the variable as a reminder
-    if verb_type == "RU":
-        te_verb = te_verb + verb_base + "て"
-        return te_verb
+    change_char = user_verb[-1]
+    print(change_char)
+    verb_base = user_verb[:-1] # Remove the last character
+    if verb_type == "IR":
+        end_char = te_irregulars.get(change_char)
     else:
-        change_char = verb_base[-1]
-        verb_base = verb_base[:-1] # Remove the last character
-        if verb_type == "IR":
-            end_char = te_irregulars.get(change_char)
-        else:
-            end_char = te_u_regulars.get(change_char)
-        te_verb = te_verb + verb_base + end_char
-        return te_verb
+        end_char = te_u_regulars.get(change_char)
+        print(end_char)
+    te_verb = te_verb + verb_base + end_char
+    return te_verb
         
 def add_polite_glue(te_form_verb):
     global polite_add_on
