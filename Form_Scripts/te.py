@@ -5,6 +5,7 @@
 te_irregulars = {"いく":"いって", "くる":"きて", "する":"して"}
 te_u_regulars = {"く":"いて", "ぐ":"いで", "す":"して", "る":"って", "つ":"って", "う":"って", "む":"んで", "ぬ":"んで", "ぶ":"んで"} # There may be a better way to organize this later.
 te_r_regulars = {"る":"て"}
+polite_add_on = "い"
 
 # Define Functions
 
@@ -27,3 +28,6 @@ def conjugateTEForm(verb_base, verb_type): # This only makes the regular te_form
         te_verb = te_verb + verb_base + end_char
         return te_verb
         
+def add_polite_glue(te_form_verb):
+    global polite_add_on
+    return te_form_verb + polite_add_on
