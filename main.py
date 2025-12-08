@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 ## Import Custom Scripts
-from Form_Scripts.te_form import *
+from procedures import *
 
 # Delcare Global Variables
 ru_verb_end_char = "る"
@@ -70,11 +70,13 @@ if __name__=="__main__":
     verb_base = user_verb[:-1]
     end_char = user_verb[-1]
     exception_status = exceptionVerbChecker(user_verb=user_verb)
+    verb_forms = {}
     if exception_status:
         print("Exception Look Up Procedue") # TBD
     else:
         ru_verb_status = verbChecker(user_verb=user_verb, end_char=end_char)
         if ru_verb_status:
-            print("RU Verb Status Procedure") #TBD
+            verb_forms = RUVerbProcedure(user_verb=user_verb, verb_base=verb_base)
         else:
-            print("U Verb Status Procedure") #TBD
+            verb_forms = UVerbProcedure(user_verb=user_verb, verb_base=verb_base)
+    print(verb_forms) # Work in Progress. 
