@@ -19,9 +19,9 @@ def conjugateRUNegative(verb_base):
     global present_ending
     return verb_base + present_ending
 
-def conjugateRUPastNegative(negative_ru):
+def conjugatePastNegative(negative_v):
     global past_ending
-    return negative_ru[:-1] + past_ending
+    return negative_v[:-1] + past_ending
 
 def conjugateUNegative(user_verb):
     global chars_df
@@ -30,10 +30,10 @@ def conjugateUNegative(user_verb):
     if user_verb[-1] == "う":
         new_end_char = "わ"
     else:
-        new_end_char = chars_df.loc[chars_df['U'] == "う", 'A'].iloc[0]
+        new_end_char = chars_df.loc[chars_df['U'] == user_verb[-1], 'A'].iloc[0]
     return new_verb + new_end_char + present_ending
 
-def conjugateUNegativePast(negative_u):
-    global past_ending
-    new_verb = negative_u[:-1]
-    return new_verb + past_ending
+# def conjugateUNegativePast(negative_u):
+#     global past_ending
+#     new_verb = negative_u[:-1]
+#     return new_verb + past_ending

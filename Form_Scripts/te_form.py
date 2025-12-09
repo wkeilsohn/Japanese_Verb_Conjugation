@@ -18,15 +18,13 @@ def conjugateUTEForm(user_verb, verb_type):
     global te_irregulars
     global te_u_regulars
     te_verb = ""
-    change_char = user_verb[-1]
-    print(change_char)
-    verb_base = user_verb[:-1] # Remove the last character
     if verb_type == "IR":
-        end_char = te_irregulars.get(change_char)
+        te_verb = te_irregulars.get(user_verb)
     else:
+        verb_base = user_verb[:-1]
+        change_char = user_verb[-1]
         end_char = te_u_regulars.get(change_char)
-        print(end_char)
-    te_verb = te_verb + verb_base + end_char
+        te_verb = te_verb + verb_base + end_char
     return te_verb
         
 def add_polite_glue(te_form_verb):

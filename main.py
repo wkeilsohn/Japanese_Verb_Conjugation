@@ -65,7 +65,7 @@ if __name__=="__main__":
     exception_status = exceptionVerbChecker(user_verb=user_verb)
     verb_forms = {}
     if exception_status:
-        print("Exception Look Up Procedue") # TBD
+        verb_forms = IRVerbProcedure(user_verb=user_verb)
     else:
         ru_verb_status = verbChecker(user_verb=user_verb, end_char=end_char)
         if ru_verb_status:
