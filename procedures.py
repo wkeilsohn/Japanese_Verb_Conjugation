@@ -47,14 +47,18 @@ def UVerbProcedure(user_verb, verb_base):
 
 def IRVerbProcedure(user_verb): # This only covers the two most common irregular verbs. As noted, I am just one person. 
     dict_form = user_verb
-    stem_form = conjugateIRStem(user_verb=user_verb)
-    te_form = conjugateUTEForm(user_verb=user_verb, verb_type="IR")
-    past_form = conjugatePast(te_verb=te_form)
+    stem_form = conjugateERStem(user_verb=user_verb)
     polite_forms = conjugatePolite(verb_root=stem_form)
     if user_verb == "する":
         negative_form = "しない"
-    else:
+        te_form = conjugateUTEForm(user_verb=user_verb, verb_type="IR")
+    elif user_verb == "くる":
         negative_form = "こない"
+        te_form = conjugateUTEForm(user_verb=user_verb, verb_type="IR")
+    else:
+        negative_form = "ない"
+        te_form = conjugateUTEForm(user_verb=user_verb, verb_type="ER") # Exceptions
+    past_form = conjugatePast(te_verb=te_form)
     past_negative_form = conjugatePastNegative(negative_v=negative_form)
     conjugation_dict = {"Dictionary Form": dict_form, "Stem Form": stem_form, "Polite Form(s)": polite_forms, \
                         "Negative Form": negative_form, "Past Negative Form": past_negative_form, "Past Form": \

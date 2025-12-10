@@ -12,7 +12,7 @@ from procedures import *
 # Delcare Global Variables
 ru_verb_end_char = "る"
 irreg_ls = ["する", "くる"]
-exception_ls = ["ある", "いく"]
+exception_ls = ["ある", "いる"]
 
 ru_u_common_exceptions = ["かえる", "しる", "しゃべる", "帰る", "知る", "喋る"] # There are probably more but I am just one person.
 

@@ -30,3 +30,10 @@ def conjugateIRStem(user_verb):
     swap_char = user_verb[0]
     new_char = chars_df.loc[chars_df['U'] == swap_char, 'I'].iloc[0]
     return new_char
+
+def conjugateERStem(user_verb):
+    global chars_df
+    new_verb = user_verb[:-1]
+    swap_char = user_verb[-1]
+    new_char = chars_df.loc[chars_df['U'] == swap_char, 'I'].iloc[0]
+    return new_verb + new_char
