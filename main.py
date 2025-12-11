@@ -14,7 +14,7 @@ ru_verb_end_char = "る"
 irreg_ls = ["する", "くる"]
 exception_ls = ["ある", "いる"]
 
-ru_u_common_exceptions = ["かえる", "しる", "しゃべる", "帰る", "知る", "喋る"] # There are probably more but I am just one person.
+ru_u_common_exceptions = ["かえる", "しる", "しゃべる", "はいる", "帰る", "知る", "喋る", "入る"] # There are probably more but I am just one person.
 
 # Define Functions
 
